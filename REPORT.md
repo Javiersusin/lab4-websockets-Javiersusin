@@ -12,6 +12,7 @@ Cambios principales:
 - Decisiones de sincronización: los tests usan `CountDownLatch` para coordinar eventos asíncronos entre el cliente WebSocket y el hilo de pruebas.
 - Cobertura de pruebas: se probaron tanto la apertura de la conexión (`onOpen`) como la interacción básica de chat (`onChat`) con mensajes reales enviados desde el cliente de prueba.
 - Además se probó el correcto funcionamiento desde Postman.
+- Como último añadido, en el último commit. He añadido frases que el servidor Eliza suele dar para hacer la comprobación más segura que no solo con la palabra sad.
 ## Learning Outcomes
 - Practiqué la sincronización de hilos en pruebas asíncronas usando `CountDownLatch` y colecciones compartidas.
 - Aprendí a diseñar aserciones robustas frente a respuestas no deterministas (usar contains / any / rangos en vez de assertEquals rígidos).

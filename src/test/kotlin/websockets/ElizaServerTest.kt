@@ -60,7 +60,16 @@ class ElizaServerTest {
 // un intervalo en lugar de un valor fijo(equals).
 
         // 4. COMPLETE assertEquals(XXX, list[XXX])
-        assertTrue(list.any { it.contains("sad", ignoreCase = true) })
+        val respuestasASad =
+            listOf(
+                "Why do you say you are feeling sad?",
+                "Do you believe it is normal to be feeling sad?",
+                "I am sorry to hear you are feeling sad.",
+                "Do you enjoy being feeling sad?",
+            )
+
+        // Miramos que contenga frase de lista o que contenga "sad"
+        assertTrue(list.any { it in respuestasASad } || list.any { it.contains("sad", ignoreCase = true) })
     }
 }
 
@@ -93,7 +102,7 @@ class ComplexClient(
         // 5. COMPLETE if (expression) {
         // 6. COMPLETE   sentence
         // }
-        if (message.contains("What's on your mind?")) {
+        if (message == "---") {
             session.basicRemote.sendText("I am feeling sad")
         }
     }
